@@ -1,0 +1,14 @@
+{
+  "name": "hello-js",
+  "version": "0.0.0",
+  "description": "Blink raspberry pi ACT light w. gpio module",
+  "main": "index.js",
+  "author": "csquared",
+  "scripts":{
+    "start" : "node index.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "gpio": "^0.2.5"
+  }
+}
