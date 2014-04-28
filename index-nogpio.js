@@ -1,7 +1,8 @@
 var fs   = require('fs');
-var LED_FILE = '/sys/class/leds/led0/brightness'
+var LED_TRIGGER    = '/sys/class/leds/led0/trigger';
+var LED_BRIGHTNESS = '/sys/class/leds/led0/brightness';
 
-fs.writeFileSync('/sys/class/leds/led0/trigger', 'none');
+fs.writeFileSync(LED_TRIGGER, 'none');
 
 var blinkInterval = setInterval(function(){
   fs.writeFileSync(LED_FILE, '1');
@@ -9,5 +10,5 @@ var blinkInterval = setInterval(function(){
 }, 1000)
 
 process.on('exit', function(){
-  fs.writeFileSync('/sys/class/leds/led0/trigger', 'mmc0');
+  fs.writeFileSync(LED_TRIGGER, 'mmc0');
 })
