@@ -5,7 +5,7 @@
   "main": "index.js",
   "author": "csquared",
   "scripts":{
-    "start" : "node index.js"
+    "start" : "node index-nogpio.js"
   },
   "license": "ISC",
   "dependencies": {
