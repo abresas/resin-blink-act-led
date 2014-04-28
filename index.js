@@ -3,12 +3,11 @@ var fs   = require('fs'),
 
 fs.writeFileSync('/sys/class/leds/led0/trigger', 'none');
 
-
 var gpio16 = gpio.export(16,{
   ready: function() {
     inervalTimer = setInterval(function() {
-      gpio16.set();
-      setTimeout(function() { gpio16.reset(); }, 500);
+      gpio16.set(1);
+      setTimeout(function() { gpio16.set(0); }, 500);
     }, 1000);
   }
 });
